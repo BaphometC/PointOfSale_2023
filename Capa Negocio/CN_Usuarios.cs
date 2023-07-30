@@ -21,7 +21,6 @@ namespace Capa_Negocio
         #region Create
         public string Insertar(CE_Usuarios Usuarios)
         {
-            string caca = "caca";
             string msg = objDatos.CD_Insertar(Usuarios);
             return msg;
         }
