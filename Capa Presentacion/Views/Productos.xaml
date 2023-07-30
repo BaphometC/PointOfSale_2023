@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PRO2_PDV_2023.Views.Usuarios"
+﻿<UserControl x:Class="PRO2_PDV_2023.Views.Productos"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -433,7 +433,7 @@
     </UserControl.Resources>
     <Border CornerRadius="10"
             Background="#f1f6fc">
-        <Grid x:Name="GridUsuarios">
+        <Grid x:Name="GridProductos">
             <!--#region COLS & Filas-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"/>
@@ -458,7 +458,7 @@
             <!--#region Titulo-->
             <TextBlock
                        Grid.ColumnSpan="2"
-                       Text="Mantenimiento de Usuarios"
+                       Text="Mantenimiento de Productos"
                        Foreground="Black"
                        FontSize="30"
                        FontWeight="SemiBold"
@@ -467,7 +467,7 @@
             <!--#endregion Titulo-->
             <!--#region Buscador-->
             <!--#region Texto-->
-            <TextBlock Text="Buscar Usuario:"
+            <TextBlock Text="Buscar Producto:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Top"
                        Grid.Column="2"
@@ -495,10 +495,10 @@
                     Grid.Row="2"
                     Cursor="Hand"
                     Width="150"
-                    x:Name="BtnCrearUsuario"
+                    x:Name="BtnCrearProducto"
                     Style="{DynamicResource ButtonStyleCrear}"
-                    Click="Agregar" Margin="90,0,90,0">
-                <TextBlock Text="Agregar usuario"
+                    Click="Agregar_Producto" Margin="90,0,90,0">
+                <TextBlock Text="Agregar producto"
                            Foreground="White"
                            FontSize="15"
                            />
@@ -526,25 +526,25 @@
                       HorizontalGridLinesBrush="#292521">
                 <DataGrid.Columns>
 
-                    <DataGridTextColumn Header="ID"
+                    <DataGridTextColumn Header="ID - Código"
                                         Width="50"
-                                        Binding="{Binding id_user}"/>
-                    <DataGridTextColumn Header="Nombre"
-                                        Width="100"
-                                        Binding="{Binding nombre}"/>
-                    <DataGridTextColumn Header="Apellido"
-                                        Width="200"
-                                        Binding="{Binding apellido}"/>
-                    <DataGridTextColumn Header="DNI"
+                                        Binding="{Binding id_product}"/>
+                    <DataGridTextColumn Header="Descripción"
+                                        Width="150"
+                                        Binding="{Binding descripcion}"/>
+                    <DataGridTextColumn Header="Cantidad"
+                                        Width="50"
+                                        Binding="{Binding precio_unitario}"/>
+                    <DataGridTextColumn Header="Precio Unitario"
                                         Width="*"
-                                        Binding="{Binding dni}"/>
+                                        Binding="{Binding correo}"/>
                     <DataGridTextColumn Header="Correo"
                                         Width="*"
                                         Binding="{Binding correo}"/>
                     <DataGridTextColumn Header="Rol"
                                         Width="*"
                                         Binding="{Binding nombre_rol}"/>
-                    <DataGridTemplateColumn Header="Opciones de Admin"
+                    <DataGridTemplateColumn Header="Opciones"
                                             Width="300">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -560,7 +560,7 @@
                                             Style="{DynamicResource ButtonConsult}"
                                             Click="Consultar"
                                             FontWeight="SemiBold"
-                                            CommandParameter="{Binding id_user}"/>
+                                            CommandParameter="{Binding id_product}"/>
                                     <Button Content="Actualizar"
                                             x:Name="BtnActualizar"
                                             Background="White"
@@ -571,7 +571,7 @@
                                             BorderBrush="transparent"
                                             FontWeight="SemiBold"
                                             Style="{DynamicResource ButtonActual}"
-                                            CommandParameter="{Binding id_user}"
+                                            CommandParameter="{Binding id_product}"
                                             Click="Actualizar"/>
                                     <Button Content="Eliminar"
                                             x:Name="BtnEliminar"
@@ -582,8 +582,9 @@
                                             Foreground="#BB0000"
                                             BorderBrush="transparent"
                                             FontWeight="SemiBold"
-                                            CommandParameter="{Binding id_user}"
-                                            Style="{DynamicResource ButtonEliminar}" Click="Eliminar"/>
+                                            CommandParameter="{Binding id_product}"
+                                            Style="{DynamicResource ButtonEliminar}" 
+                                            Click="Eliminar"/>
                                 </DockPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -592,11 +593,11 @@
             </DataGrid>
             <!--#endregion-->
             <!--#region FRAMEUSUARIOS-->
-            <Frame Name="FrameUsuarios"
+            <Frame Name="FrameProductos"
                    Grid.Column="0"
                    Grid.Row="0"
                    Grid.RowSpan="8"
-                   Grid.ColumnSpan="7" Navigated="FrameUsuarios_Navigated"/>
+                   Grid.ColumnSpan="7" Navigated="FrameProductos_Navigated"/>
             <!--#endregion-->
         </Grid>
     </Border>
