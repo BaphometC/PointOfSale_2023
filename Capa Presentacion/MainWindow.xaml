@@ -242,6 +242,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="371*"/>
                 <ColumnDefinition Width="108*"/>
+                
             </Grid.ColumnDefinitions>
             <!--#Region header -->
             <Grid Name="Header"
