@@ -21,7 +21,6 @@ namespace Capa_Negocio
         #region Create
         public string Insertar(CE_Usuarios Usuarios)
         {
-            //COMMIT DE PRUEBA 
             string msg = objDatos.CD_Insertar(Usuarios);
             return msg;
         }
