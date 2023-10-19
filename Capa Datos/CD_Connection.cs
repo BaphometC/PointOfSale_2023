@@ -11,9 +11,9 @@ namespace Capa_Datos
     public class CD_Connection
     {
         //cadena de conexion cbernal - cambia port y pwd
-        private readonly MySqlConnection con = new MySqlConnection("SERVER=localhost;port=3306;UID=root;pwd=123456;DATABASE=sistemaventa_bd;sslmode=none;");
+        //private readonly MySqlConnection con = new MySqlConnection("SERVER=localhost;port=3306;UID=root;pwd=123456;DATABASE=sistemaventa_bd;sslmode=none;");
         //Cadema Baphomet
-        //private readonly MySqlConnection con = new MySqlConnection("SERVER=localhost;port=3308;UID=root;pwd=kutasic;DATABASE=sistemaventa_bd;sslmode=none;");
+        private readonly MySqlConnection con = new MySqlConnection("SERVER=localhost;port=3308;UID=root;pwd=kutasic;DATABASE=sistemaventa_bd;sslmode=none;");
 
 
         public MySqlConnection AbrirConexion()
